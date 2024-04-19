@@ -2,9 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,13 +35,20 @@
 						<span>SmartHealthy!</span><br />Daftar sekarang dan dapatkan akses
 						gratis!
 					</p>
-					<button>Daftar Sekarang!</button>
+					<div class="registration-now">
+						<input type="email" placeholder="Alamat Email Anda">
+						<button>Daftar Sekarang!</button>
+					</div>
 				</div>
+				<a class="more-information" href="#about">Selengkapnya >>></a>
 			</section>
 
 			<section class="about" id="about">
 				<h2>Tentang SmartHealthy</h2>
-				<p>SmartHealthy adalah platform kesehatan digital yang dirancang untuk membantu Anda mencapai gaya hidup sehat dengan lebih mudah dan efektif. Kami menawarkan berbagai fitur dan solusi yang dipersonalisasi untuk membantu Anda mencapai tujuan kesehatan Anda, mulai dari komunitas online yang suportif, asisten virtual kesehatan yang informatif, hingga rekomendasi makanan dan program latihan yang dipersonalisasi.</p>
+				<div class="content">
+					<img src="./assets/about.svg" alt="About SmartHealthy IMG">
+					<p>SmartHealthy adalah platform kesehatan digital yang dirancang untuk membantu Anda mencapai gaya hidup sehat dengan lebih mudah dan efektif. Kami menawarkan berbagai fitur dan solusi yang dipersonalisasi untuk membantu Anda mencapai tujuan kesehatan Anda, mulai dari komunitas online yang suportif, asisten virtual kesehatan yang informatif, hingga rekomendasi makanan dan program latihan yang dipersonalisasi.</p>
+				</div>
 			</section>
 
 			<section class="reason" id="reason">
@@ -144,22 +149,21 @@
 
 			<section class="contact" id="contact">
 				<h2>Kontak</h2>
-				<div class="form" hidden>
+				<div class="form">
+					<img src="./assets/contact.svg" alt="">
 					<form id="form">
 						<label for="name">Nama Lengkap:</label>
-						<input type="text" id="name" placeholder="Masukkan Nama"/>
-						<label for="city">Kota Asal:</label>
-						<input type="text" id="city" placeholder="Masukkan Kota"/>
+						<input type="text" id="name" placeholder="Masukkan Nama Lengkap"/>
+						<label for="city" hidden>Kota Asal:</label>
+						<input type="text" id="city" placeholder="Masukkan Kota" style="display: none;"/>
 					
 						<label for="email">Alamat Email:</label>
-						<input type="email" id="email" placeholder="Masukkan Email"/>
-						<label for="zip-code">Code Pos:</label>
-						<input type="number" id="zip-code" placeholder="Masukkan Code Pos"/>
+						<input type="email" id="email" placeholder="Masukkan Alamat Email"/>
+						<label for="zip-code" hidden>Code Pos:</label>
+						<input type="number" id="zip-code" placeholder="Masukkan Code Pos"style="display: none;"/>
 						
-						<input style="display: inline;" type="checkbox" id="status" />
-						<label class="status" for="status" id="check"
-						>Dengan ini saya menyatakan data yang diisi pada form ini adalah
-						benar dan telah sesuai</label>
+						<label for="message">Pesan</label>
+						<textarea name="" id="message" cols="30" rows="10" placeholder="Masukkan pertanyaan atau saran Anda"></textarea>
 						
 						<button type="submit" id="submit-form">Submit</button>
 						<div id="warning"></div>
