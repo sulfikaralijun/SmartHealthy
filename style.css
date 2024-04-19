@@ -71,17 +71,14 @@ header .btn-group {
         width: 120px;
         height: 48px;
         border: 1px solid var(--green);
-        color: var(--green);
+        color: #fff;
         font-size: 18px;
         font-family: "Poppins";
         font-weight: 500;
-        background: transparent;
+        background: #12b576;
         transition: all 0.3s ease;
         cursor: pointer;
-        &:hover {
-            background-color: var(--green);
-            color: #fff;
-        }
+        
     }
     & .btn-right {
         color: #fff;
