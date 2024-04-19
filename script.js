@@ -48,3 +48,12 @@ function submit() {
 
 const form = document.getElementById('submit-form')
 form.addEventListener('click', submit);
+
+function showNav() {
+    const nav = document.querySelector("#nav");
+    if (nav.style.display == "none") {
+        nav.style.display = "flex"
+    } else {
+        nav.style.display = "none"
+    }
+}

@@ -31,6 +31,7 @@ header {
     justify-content: space-between;
     padding: 27px 80px;
     z-index: 10;
+    position: relative;
 }
 
 header .logo {
@@ -44,9 +45,10 @@ header .logo {
     }
 }
 
-header nav {
+header nav#nav {
     display: flex;
     align-items: center;
+    position: relative;
     gap: 50px;
     & a {
         color: var(--black);
@@ -85,6 +87,23 @@ header .btn-group {
         color: #fff;
         background-color: var(--green);
     }
+}
+
+header .burger {
+    height: 32px;
+    display: none;
+    & img {
+        height: 100%;
+    }
+}
+header nav#nav-drop {
+    display: none;
+}
+header .burger:hover + #nav-drop {
+    display: flex;
+}
+header nav#nav-drop:hover {
+    display: flex;
 }
 
 /* Main Section */
@@ -166,24 +185,28 @@ main .hero {
     left: 0;
     text-decoration: underline;
     color: #333;
-    &:hover{
+    &:hover {
         color: #12b576;
     }
 }
 
-main .about {
+main section {
     margin-top: 80px;
-    width: 100%;
-    /* background-color: red; */
-    position: relative;
-    padding-top: 20px;
 }
-.about h2 {
+
+main section h2 {
     color: var(--black);
     font-size: 32px;
     font-family: "Plus Jakarta Sans";
     font-weight: 800;
     text-align: center;
+}
+
+main .about {
+    width: 100%;
+    /* background-color: red; */
+    position: relative;
+    padding-top: 20px;
 }
 .about .content {
     display: flex;
@@ -196,22 +219,11 @@ main .about {
 .about .content p {
     font-size: 20px;
     font-family: "Poppins";
-    /* margin: 0 auto; */
-    /* max-width: 40%;   */
-    /* text-align: center; */
 }
 main .reason {
     clear: both;
-    margin-top: 80px;
     width: 100%;
     padding-top: 20px;
-}
-.reason h2 {
-    color: var(--black);
-    font-size: 32px;
-    font-family: "Plus Jakarta Sans";
-    font-weight: 800;
-    text-align: center;
 }
 
 .reason .cards {
@@ -267,15 +279,7 @@ main .reason {
 }
 
 main .feature {
-    margin-top: 80px;
     width: 100%;
-}
-.feature h2 {
-    color: var(--black);
-    font-size: 32px;
-    font-family: "Plus Jakarta Sans";
-    font-weight: 800;
-    text-align: center;
 }
 .feature .cards {
     margin-top: 40px;
@@ -308,16 +312,8 @@ main .feature {
 }
 
 main .contact {
-    margin-top: 80px;
     width: 100%;
     padding-top: 20px;
-}
-.contact h2 {
-    color: var(--black);
-    font-size: 32px;
-    font-family: "Plus Jakarta Sans";
-    font-weight: 800;
-    text-align: center;
 }
 .contact .form {
     display: flex;
@@ -335,11 +331,6 @@ main .contact {
         font-size: 18px;
         font-family: "Plus Jakarta Sans";
         font-weight: 600;
-    }
-    & label.status {
-        font-size: 14px;
-        font-family: "Poppins";
-        font-weight: 500;
     }
 
     & input {
@@ -369,7 +360,7 @@ main .contact {
         padding: 8px 12px;
         font-family: "Plus Jakarta Sans";
         font-size: 16px;
-        &:focus{
+        &:focus {
             outline: none;
         }
     }
@@ -406,6 +397,206 @@ footer {
                 }
             }
         }
+    }
+}
+
+@media (max-width: 1200px) {
+    header nav#nav {
+        display: none;
+    }
+    header nav#nav-drop {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background: rgba(18, 181, 118, 0.4);
+        backdrop-filter: blur(40px);
+        position: absolute;
+        top: 100%;
+        width: 350px;
+        gap: 10px;
+        padding: 40px;
+        border-radius: 12px;
+        right: 80px;
+        display: none;
+        & a {
+            color: var(--black);
+            font-size: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            font-family: "Poppins";
+            box-sizing: border-box;
+        }
+        & a:hover {
+            color: #12b576;
+        }
+    }
+    header .burger {
+        display: block;
+    }
+}
+
+@media (max-width: 992px) {
+    main .hero {
+        background-size: 50%;
+        height: 440px;
+    }
+    main section h2 {
+        font-size: 28px;
+    }
+    .hero-content h1 {
+        font-size: 38px;
+        width: 600px;
+    }
+    .hero-content p {
+        font-size: 18px;
+    }
+    .registration-now input,
+    .registration-now button {
+        font-size: 16px;
+    }
+    .about .content p {
+        font-size: 16px;
+    }
+    .reason .card img {
+        width: 52px;
+    }
+    .reason .card h3 {
+        font-size: 16px;
+    }
+    .cards-row .card h3 {
+        font-size: 16px;
+    }
+    .form form label {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 414px) {
+
+    header {
+        padding:  10px 20px;
+        /* background-color: #dc213e; */
+    }
+    header .logo {
+        font-size: 20px;
+    }
+    header nav#nav-drop {
+        width: 70%;
+        right: 20px;
+        padding: 20px;
+        & a {
+            font-size: 16px;
+        }
+    }
+    header .btn-group {
+        display: none;
+    }
+    header .burger {
+        height: 24px;
+    }
+    main {
+        padding:  0 20px;
+    }
+
+    main section {
+        margin-top: 40px;
+    }
+    main .hero {
+        height: 250px;
+        margin-top: 0;
+        /* background-color: #dc213e; */
+    }
+    .hero .hero-content {
+        gap: 10px;
+    }
+    .hero-content h1 {
+        font-size: 20px;
+        width: 280px;
+    }
+    .hero-content p {
+        font-size: 12px;
+        width: 280px;
+    }
+    .registration-now input {
+        width: 50%;
+        height: 22px;
+        font-size: 14px;
+        
+    }
+    .registration-now button {
+        width: 100px;
+        height: 22px;
+        font-size: 10px;
+    }
+    .hero .more-information  {
+        bottom: 0;
+        font-size: 14px;
+    }
+    main section h2 {
+        font-size: 18px;
+    }
+    .about .content p {
+        font-size: 8px;
+    }
+
+    .reason .cards {
+        gap: 10px;
+    }
+    .reason .card {
+        padding: 20px 0;
+        border-radius: 6px;
+    }
+    .reason .card img {
+        width: 30px;
+    }
+    .reason .card h3 {
+        font-size: 10px;
+        margin-top: 10px;
+    }
+    .reason .card::before {
+        font-size: 6px;
+        border-radius: 6px;
+        padding: 5px;
+    }
+    .cards-row .card {
+        gap: 30px;
+        padding: 20px 0;
+    }
+    .cards-row {
+        gap: 10px;
+    }
+    .cards-row .card img {
+        width: 50px;
+    }
+    .cards-row .card h3 {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .form form {
+        width: 50%;
+        & label {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        & input {
+            font-size: 12px;
+            padding: 4px 6px;
+        }
+        & textarea {
+            font-size: 12px;
+            padding: 4px 6px;
+            height: 50px;
+        }
+        & button {
+            font-size: 14px;
+            padding: 8px;
+            margin-top: 10px;
+        }
+    }
+    footer {
+        font-size: 14px;
     }
 }
 
